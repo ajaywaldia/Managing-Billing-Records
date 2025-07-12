@@ -22,7 +22,7 @@ And Azure blob storage that stores billing records older than 3 months. That giv
                   |       Azure Function: readBillingRecord          |
                   |         (HTTP Trigger - GET by ID)               |
                   +--------------------------------------------------+
-                               	           |
+                			   |
                  +--------------------------------------------------------+
                  |                                               	  |
                  v                         			 	  v
@@ -35,7 +35,7 @@ And Azure blob storage that stores billing records older than 3 months. That giv
                          		   ▲
 			                   |
 		          +-------------------------------------+
-                        | Azure Function: archiveOldRecords   |
+			  | Azure Function: archiveOldRecords   |
                   	  | (Timer Trigger - Daily Job)         |
                 	  +-------------------------------------+
 
