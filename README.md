@@ -5,7 +5,6 @@ And Azure blob storage that stores billing records older than 3 months. That giv
 
 	✅ Store active billing records (<3 months) in Azure Table Storage
 	✅ Store archived billing records (>3 months) in Azure Blob Storage
-	✅ Avoid Cosmos DB entirely
 	✅ Maintain the same API contract (reads/writes)
 	✅ Keep old data immutable (read-only)
 	✅ Keep it simple and cost-effective
@@ -29,8 +28,8 @@ And Azure blob storage that stores billing records older than 3 months. That giv
                  v                         			 	  v
      +------------------------------+   	+-------------------------------------+
      |  Azure Table Storage         |   	|  Azure Blob Storage                 |
-     |  (Records < 90 days)         |   	|  (Archived Records > 90 d)          |
-     |  Fast Read/Write             |    	|  Cold Access - Read Only            |
+     |  (Records < 90 days)         |   	|  (Archived Records > 90 days)       |
+     |  Fast Read/Write             |    	|  Read Only                          |
      +------------------------------+   	+-------------------------------------+
 
                          		   ▲
@@ -39,3 +38,8 @@ And Azure blob storage that stores billing records older than 3 months. That giv
                           | Azure Function: archiveOldRecords   |
                   	  | (Timer Trigger - Daily Job)         |
                 	  +-------------------------------------+
+
+
+**Note**
+_This repository contains a initial architectural implementation
+The files contains the skeleton code and is not fully running. It require few more implementation._
